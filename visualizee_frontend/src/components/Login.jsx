@@ -15,14 +15,16 @@ const Login = () => {
   const createOrGetUser =  (response) => {
     const decoded = jwt_decode(response.credential);
     const { name, sub, picture } = decoded;
-    const user = {
+    console.log( "name")
+    console.log(sub)
+    const doc = {
       _id: sub,
       _type: 'user',
       userName: name,
       image: picture,
     }; 
-    client.createIfNotExists(user).then(() => {
-      navigate('/', { replace: true });
+    client.createIfNotExists(doc).then((res) => {
+       navigate('/', { replace: true });
     });
   }
 
