@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
-import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { client, urlFor } from '../client';
 import { fetchUser } from '../utils/fetchUser';
 
@@ -12,7 +10,6 @@ const Pin = ({
         postedBy,
         image,
         _id,
-        destination,
         save
     }
 }) => {
@@ -68,26 +65,11 @@ const Pin = ({
                                 { height: "100%" }
                             }>
                             <div className="flex items-center justify-between">
-                                <div className="flex gap-2">
-                                    <a href={
-                                        `${image?.asset?.url
-                                        }?dl=`
-                                    }
-                                        download
-                                        onClick={
-                                            (e) => e.stopPropagation()
-                                        }
-                                        className="bg-white w-9 h-9 rounded-full flex items-center justify-center text-dark text-dark-xl opacity-75 hover:opacity-100 hover:shadow-md outline-none">
-                                        <MdDownloadForOffline />
-                                    </a>
-                                </div>
                                 {
                                     alreadySaved ? (
-                                        <button type="button" className="bg-amber-500 opacity-80 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none">
-                                            {
-                                                save?.length
-                                            }
-                                            Saved
+                                        <button type="button" className="bg-red-300 opacity-80 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none">
+                                            {save?.length }
+                                            <p>Saved</p>
                                         </button>
                                     ) : (
                                         <button type="button" className="bg-red-500 opacity-80 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
