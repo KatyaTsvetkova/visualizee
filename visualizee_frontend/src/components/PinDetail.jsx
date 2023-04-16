@@ -133,7 +133,7 @@ const PinDetail = ({ user }) => {
           <Link to={`user-profile/${user?._id}`}
             className="flex justify-center items-center">
             <img
-              src={pinDetail?.postedBy?.image}
+              src={user?.image}
               alt="user-profile"
               className="w-8 h-8 rounded-full object-cover"
             />

@@ -108,9 +108,9 @@ const Pin = ({
                 <img
                     src={postedBy?.image}
                     alt="user-profile"
-                    className="w-8 h-8 rounded-full object-cover"
+                    className="w-5 h-5  rounded-full object-cover"
                 />
-                <p className="font-semibold capitalize">{postedBy?.userName}</p>
+                <p className="font-semibold text-xs capitalize">{postedBy?.userName}</p>
             </Link>
         </div>
     )

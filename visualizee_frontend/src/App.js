@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google';
-//import { gapi } from 'gapi-script';
+ 
 
 import Login from './components/Login';
 import Home from './container/Home';

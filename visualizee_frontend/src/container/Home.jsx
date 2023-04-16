@@ -7,7 +7,7 @@ import { Sidebar, UserProfile } from '../components';
 import Pins from './Pins';
 import { userQuery } from '../utils/data';
 import { client } from '../client';
-import logo from '../assets/logo.png'
+import logo from '../assets/logo-removebg.png'
 import { useEffect } from 'react';
 import { fetchUser } from '../utils/fetchUser';
 
@@ -40,7 +40,7 @@ const Home = () => {
         <div className="p-2 w-full flex flex-row justify-between items-center shadow-md">
           < HiMenu fontSize={40} className="cursor-pointer" onClick={() => setToggleSidebar(true)} />
           <Link to="/">
-            <img src={logo} alt="logo" className="w-28" />
+            <img src={logo} alt="logo" className="w-80" />
           </Link>
           <Link to={`user-profile/${user?._id}`}>
             <img src={user?.image} alt="logo" className="w-28" />
