@@ -43,7 +43,7 @@ const Pin = ({
     }
 
     return (
-        <div className="m-2">
+        <div className="m-2 scale-100 hover:scale-110 ease-in duration-300">
             <div onMouseEnter={
                 () => setPostHovered(true)
             }
@@ -68,7 +68,7 @@ const Pin = ({
                                 {
                                     alreadySaved ? (
                                         <button type="button" className="bg-red-300 opacity-80 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none">
-                                            {save?.length }
+                                            {save?.length}
                                             <p>Saved</p>
                                         </button>
                                     ) : (
