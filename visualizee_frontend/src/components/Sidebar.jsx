@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { RiHomeFill } from 'react-icons/ri';
+import { BiHomeSmile } from 'react-icons/bi';
 
 import logo from '../assets/logo.jpg'
 import { categories } from '../utils/data'
@@ -32,7 +32,7 @@ const Sidebar = ({ user, closeToggle }) => {
             className={({ isActive }) => isActive ? isActiveStyle : isNotActiveStyle}
             onClick={handleCloseSidebar}
           >
-            <RiHomeFill />
+            <BiHomeSmile fontSize={30} className="hover:animate-bounce" />
             Home
           </NavLink>
 
@@ -48,7 +48,7 @@ const Sidebar = ({ user, closeToggle }) => {
               <img
                 src={category.image}
                 alt="category"
-                className=" relative flex items-center justify-center w-12 h-12 mt-2 mg-2 max-auto shado-lg rounded-3xl hover:rounded-xl"
+                className=" relative flex items-center justify-center w-10 h-10 max-auto shado-lg rounded-3xl hover:rounded-xl"
               />
               {category.name}
             </NavLink>
