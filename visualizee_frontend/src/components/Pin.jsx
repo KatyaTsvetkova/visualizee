@@ -15,10 +15,13 @@ const Pin = ({
 }) => {
 
     const [postHovered, setPostHovered] = useState(false);
+
     const navigate = useNavigate();
 
     const user = fetchUser();
+
     const alreadySaved = !!save?.filter((item) => item.postedBy._id === user?.sub)?.length;
+
     const savePin = (id) => {
         if (!alreadySaved) {
             client.patch(id).setIfMissing({ save: [] }).insert("after", "save[-1]", [{
@@ -32,8 +35,6 @@ const Pin = ({
                 window.location.reload();
             });
         }
-
-
     }; const deletePin = (id) => {
         client
             .delete(id)
@@ -53,7 +54,7 @@ const Pin = ({
                 onClick={
                     () => navigate(`/pin-detail/${_id}`)
                 }
-                className="relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-out">
+                className="relative cursor-zoom-in w-auto hover:shadow-lg  rounded-lg overflow-hidden transition-all duration-500 ease-out">
                 <img src={
                     urlFor(image).width(250).url()
                 }
@@ -67,7 +68,7 @@ const Pin = ({
                             <div className="flex items-center justify-between">
                                 {
                                     alreadySaved ? (
-                                        <button type="button" className="bg-red-300 opacity-80 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none">
+                                        <button type="button" className="bg-red-300 opacity-80 hover:opacity-100  text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none">
                                             {save?.length}
                                             <p>Saved</p>
                                         </button>
@@ -85,7 +86,7 @@ const Pin = ({
                                 } </div>
                             <div className="flex justify-between items-center gap-2 w-full">
 
-                                {postedBy?._id == user.sub && (
+                                {postedBy?._id === user.sub && (
                                     <button
                                         type="button"
                                         className="bg-red-500 opacity-80 hover:opacity-100 text-white font-bold text-base rounded-3xl hover:shadow-md outline-none p-1"
@@ -99,7 +100,6 @@ const Pin = ({
                                     </button>
                                 )}
                             </div>
-
                         </div>
                     )
                 } </div>
