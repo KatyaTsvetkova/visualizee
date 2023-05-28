@@ -22,11 +22,11 @@ Visualisee is a social media application that serves as a visual discovery platf
 
 **Technologies Used:**
 
-**React**: A JavaScript library for building user interfaces
+    React: A JavaScript library for building user interfaces
 
-**Sanity**: A headless CMS for content management and data storage
+    Sanity: A headless CMS for content management and data storage
 
-**Tailwind** **CSS**: A utility-first CSS framework for designing responsive UI components
+    Tailwind CSS: A utility-first CSS framework for designing responsive UI components
 
 
 **License**
